@@ -1,0 +1,316 @@
+/* General Reset */
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #1e1e2f;
+    color: #eaeaea;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Auth Section Styling */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff3366, #00eaff);
+}
+
+.auth-card {
+    background-color: #2c2c3e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #ff3366;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    color: #ff6b81;
+    text-shadow: 0 0 5px rgba(255, 107, 129, 1);
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: #eaeaea;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.8);
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff6b81, #ff3366);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.8);
+}
+
+.auth-card button:hover {
+    background: linear-gradient(45deg, #ff3366, #ff6b81);
+}
+
+/* Glowing Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 107, 129, 1);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 107, 129, 1);
+    }
+}
+
+/* Dashboard Section */
+.dashboard {
+    padding: 20px;
+    background-color: #2c2c3e;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    color: #eaeaea;
+}
+
+.dashboard h2 {
+    color: #ff6b81;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 107, 129, 1);
+}
+
+.dashboard .summary-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #333344;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.summary-box div {
+    color: #ffdc5e;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.summary-box div p {
+    color: #eaeaea;
+    font-size: 14px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #3e3e5e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+}
+
+form label {
+    font-size: 14px;
+    color: #ff6b81;
+    text-shadow: 0 0 5px rgba(255, 107, 129, 0.8);
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: #eaeaea;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.6);
+}
+
+form button {
+    padding: 10px;
+    background: #ff6b81;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.8);
+}
+
+form button:hover {
+    background: #ff3366;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #3e3e5e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    color: #eaeaea;
+}
+
+table th {
+    background-color: #444;
+    color: #ff6b81;
+}
+
+table tr:nth-child(even) {
+    background-color: #2c2c3e;
+}
+
+table tr:hover {
+    background-color: #555;
+}
+
+table button {
+    padding: 5px 10px;
+    background: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+table button:hover {
+    background: #ff3366;
+}
+
+/* Dropdowns and Additional Options */
+.recharge-options, .online-work-options {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #3e3e5e;
+    border-radius: 4px;
+}
+
+/* Due Customer Section */
+.due-section {
+    margin-top: 20px;
+    background: #3e3e5e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.due-section h3 {
+    color: #ff6b81;
+    margin-bottom: 10px;
+}
+
+.due-section input {
+    width: calc(33% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    text-align: center;
+    background: #333344;
+    color: #eaeaea;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    .auth-card {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .dashboard h2 {
+        font-size: 22px;
+    }
+
+    .summary-box {
+        flex-direction: column;
+    }
+
+    .summary-box div {
+        margin-bottom: 10px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    table button {
+        padding: 8px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* Small Screen/Android */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .auth-card h2 {
+        font-size: 20px;
+    }
+
+    .auth-card input, .auth-card button {
+        padding: 10px;
+    }
+
+    form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
