@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction & Earnings Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login / Signup Section -->
+    <div id="authSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="button" onclick="login()">Login</button>
+            <p>New User? <button type="button" onclick="showSignup()">Sign Up</button></p>
+            <p><button type="button" onclick="forgotPassword()">Forgot Password?</button></p>
+        </form>
+        
+        <form id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" required>
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" required>
+            <button type="button" onclick="signup()">Sign Up</button>
+            <p>Already have an account? <button type="button" onclick="showLogin()">Login</button></p>
+        </form>
+    </div>
+
+    <!-- Dashboard Section (only visible after login) -->
+    <div id="dashboard" style="display: none;">
+        <h2>Daily Transaction and Earnings Tracker</h2>
+
+      
+
+        <!-- Transaction Form -->
+        <form id="transactionForm" onsubmit="addTransaction(event)">
+            <h3>Record a Transaction</h3>
+            <label>Name (optional):</label>
+            <input type="text" id="name" placeholder="Enter Name">
+            
+            <label>Date:</label>
+            <input type="date" id="date" required>
+            
+            <label>Item:</label>
+            <select id="itemSelect" onchange="handleItemChange()" required>
+                <option value="BW Xerox">BW Xerox</option>
+                <option value="Colour Xerox">Colour Xerox</option>
+                <option value="Colour Print">Colour Print</option>
+                <option value="BW Print">BW Print</option>
+                <option value="Withdraw">Withdraw</option>
+                <option value="Deposit">Deposit</option>
+                <option value="Photo">Photo</option>
+                <option value="Pan">Pan</option>
+                <option value="Recharge">Recharge</option>
+                <option value="Online Work">Online Work</option>
+            </select>
+            
+            <label>Quantity:</label>
+            <input type="number" id="quantity" placeholder="Enter Quantity" required>
+            
+            <!-- Conditional fields for Recharge -->
+            <div id="rechargeProviderDiv" style="display:none;">
+                <label>Network Provider:</label>
+                <select id="rechargeProvider">
+                    <option value="Airtel">Airtel</option>
+                    <option value="Voda">Voda</option>
+                    <option value="Jio">Jio</option>
+                    <option value="BSNL">BSNL</option>
+                    <option value="DTH">DTH</option>
+                </select>
+            </div>
+            
+            <!-- Conditional fields for Online Work -->
+            <div id="onlineWorkDiv" style="display:none;">
+                <label>Work Details:</label>
+                <input type="text" id="workDetails" placeholder="Describe Work">
+                <label>Earning:</label>
+                <input type="number" id="workEarning" placeholder="Enter Earning">
+            </div>
+
+            <button type="submit">Add Transaction</button>
+        </form>
+
+        <!-- Transaction List -->
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Transaction Amount</th>
+                    <th>Earning</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="transactionList"></tbody>
+        </table>
+        
+          <!-- Due Customer Section -->
+          <div id="dueCustomerForm">
+            <h3>Due Customer Details</h3>
+            <form id="dueForm">
+                <label>Customer Name/Number:</label>
+                <input type="text" id="dueCustomerName" placeholder="Enter Customer Name or Number" required>
+                <label>Date:</label>
+                <input type="date" id="dueDate" required>
+                <label>Due Amount:</label>
+                <input type="number" id="dueAmount" placeholder="Enter Due Amount" required>
+                <button type="button" onclick="addDueCustomer()">Add Due Customer</button>
+            </form>
+
+            <!-- Due Customer List -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer Name/Number</th>
+                        <th>Date</th>
+                        <th>Due Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dueCustomerList"></tbody>
+            </table>
+        </div>
+
+        <!-- Summary -->
+        <div id="summary">
+            <h3>Summary</h3>
+            <p>Total Transactions: <span id="totalTransactions">0</span> INR</p>
+            <p>Total Earnings: <span id="totalEarnings">0</span> INR</p>
+            <p>Total Dues: <span id="totalDues">0</span> INR</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
